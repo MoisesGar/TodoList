@@ -1,10 +1,12 @@
+
 class Task {
 
-    static id = 0;
+    static ids = 0;
 
-    constructor(tarea) {
-        this.id = this.id + 1;
-        this.tarea = tarea;
+    constructor(task) {
+        this.constructor.ids += 1;
+        this.id = this.constructor.ids;
+        this.task = task;
     }
 
     getId() {
@@ -12,13 +14,19 @@ class Task {
     }
 
     getTarea() {
-        return this.tarea;
+        return this.task;
     }
 
-    setId(id) {
-        this.id = id;
-    }
-    setTarea(tarea) {
-        this.tarea = tarea;
+    setTarea(task) {
+        this.tarea = task;
     }
 }
+
+const objeto1 = new Task("Ir de compras");
+console.log(objeto1);
+
+const objeto2 = new Task("Ir a la clase de raymundo");
+console.log(objeto2);
+
+const objeto3 = new Task("Ir al ITH");
+console.log(objeto3);
